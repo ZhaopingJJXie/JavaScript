@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Buttom Click</title>
+    <script src = ../../packages/babel.min.js></script>
+    <script src = ../../packages/react.js></script>
+    <script src = ../../packages/react-dom.js></script>
+  </head>
+  <body>
+    <div id = 'container'></div>
+
+    <script type="text/jsx">
+      class Counter extends React.Component{
+
+        constructor(props){
+          super(props);
+          this.state = {count : 0};
+        }
+        incrementCount(){
+          this.setState({
+            count: this.state.count + 1
+          });
+        }
+
+        render(){
+          //invoke when setState is called
+          return (
+            <div> Count: {this.state.count}
+            <button type = "button" onClick = {this.incrementCount.bind(this)}>
+              Click Me</button>
+            </div>
+          )
+        }
+
+      }
+
+      ReactDOM.render(
+        <div>
+        <Counter />
+        </div>,
+        document.getElementById('container')
+      );
+
+    </script>
+  </body>
+</html>

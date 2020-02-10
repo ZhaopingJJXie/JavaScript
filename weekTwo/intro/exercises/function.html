@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>
+    <script>
+      var nums = [4, 8, 12, 2];
+      function print(n){
+        console.log(n);
+      }
+
+      function isEven(n){
+        return n % 2 == 0;
+      }
+      function square(n){
+        return n * n ;
+      }
+      nums.forEach(print);
+      nums.every(isEven);
+      var squares = nums.map(square);
+      //functions can be used to create objects
+      var add = function(a, b){
+        return a + b;
+      }
+      console.log(add(3,5));
+      //create funciton within objects
+      var johnDoe={
+        name: 'John Doe',
+        age: 32,
+        greeting: function(){
+          return 'Hello, nice meeting you!';
+        }
+      }
+      console.log(johnDoe.greeting());
+      //prototype can be changed 
+      function Person (name, age){
+        this.name = name;
+        this.age = age;
+        this.greeting = function(){
+          return 'Hello! My name is ' + this.name;
+        }
+      }
+      //add property to the prototype
+      Person.prototype.planet = 'Earth';
+      Person.prototype.introduction = function(){
+        return 'My age is ' + this.age;
+      }
+      var johnDoe = new Person('John Doe', 32);
+      johnDoe.greeting();
+      var janeDoe = new Person('Jane Doe', 28);
+      janeDoe.greeting();
+      johnDoe.planer;
+      johnDoe.introduction();
+
+
+      //prototypes can be extended
+      function Student (name, age, school){
+        this.__proto__ = new Person(name, age);
+        this.school = school;
+      }
+
+      var sarahBrown = new Student('Sarah Brown', 17, 'Pennx');
+      sarahBrown.greeting();
+
+      console.log(sarahBrown instanceof Person);
+    </script>
+    </p>
+  </body>
+</html>

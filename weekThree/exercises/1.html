@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+  <head>
+  </head>
+  <body>
+    <div>
+      The current date/time is <span id = "dateTime"></span>.
+    </div>
+
+    <!-- <script>
+      var dateTimeField = document.getElementById('dateTime');
+      dateTimeField.innerHTML = new Date();
+    </script> -->
+
+    <div>
+      You have visited this page <span id = "report"> </span> times.
+    </div>
+    <p>Your last visit was <span id = "lastVisitedDate"> </span>. </p>
+    <script>
+      var timesVisited = 0;
+      var lastVisitedDate = 'never';
+
+      if (localStorage.lastVisit){
+        var lastVisit = JSON.parse(localStorage.lastVisit);
+        timesVisited = lastVisit.numVisits;
+        // <!-- timesVisited = parseInt(localStorage.timesVisited); -->
+        lastVisitedDate = lastVisit.date;
+      }
+      document.getElementById('lastVisitedDate').innerHTML = lastVisitedDate;
+      // <!-- timesVisited += 1; -->
+      timesVisited++;
+
+      document.getElementById('report').innerHTML = timesVisited;
+      // <!-- localStorage.setItem('timesVisited', timesVisited); -->
+
+      var myLastVisit= {};
+      myLastVisit.date = new Date();
+      myLastVisit.numVisits = timesVisited;
+      localStorage.lastVisit = JSON.stringify(myLastVisit)
+      // <!-- var report = document.getElementById('report'); -->
+      // <!-- report.innerHTML = timesVisited; -->
+
+      if(timesVisited > 10){
+        report.style.backgroundColor = 'red';
+      }
+    </script>
+  </body>
+</html>

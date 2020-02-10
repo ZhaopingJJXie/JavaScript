@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      1 == '1' //true
+      1 ==='1' //false, different types
+
+      var x; // undefined
+      if (x){...}// false!undefined is false
+
+      x = 0;
+      if(x){...} //fasle, 0 is fasly
+
+      x = 39;
+      if (x){...} //true, 39 is truthy
+
+      vay y = null;
+      vay z = undefined;
+
+      if (y = z ){...} // true falsy equals falsy
+      if (y ===z){...} //fasle, different types
+
+      5 < '20' //true
+      '5' < 20 //true
+
+      'zebra' > 'giraffe' //true
+
+      var cooper={ age: 11};
+      var flanders={age: 11};
+
+      if (cooper == flanders){...}//false
+
+      var myDog = cooper;
+      if (myDog == cooper){...} //true
+
+      var n = ...
+      var factorial = 1;
+      for (var i = 1; i <= n; i++){
+        favctorial *= i;
+      }
+      var i = 1;
+      while( i <= n){
+        factorial *= i;
+        i++;
+      }
+      var i = 1;
+      do {
+        factorial *= i;
+        i++;
+      }
+      while(i <= n);
+    </script>
+
+
+  </body>
+</html>

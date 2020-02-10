@@ -1,0 +1,16 @@
+body{
+  background-color:black;
+}
+h1{
+  color: red;
+  font-family: verdana;
+  font-size:300%;
+  text-align: center;
+  text-transform: capitalize;
+}
+p{
+  color: green;
+  font-family: fantasy;
+  text-align:center;
+  font-size: 200%
+}

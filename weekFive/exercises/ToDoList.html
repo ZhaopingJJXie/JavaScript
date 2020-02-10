@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>J's todo list</title>
+    <script src="../../packages/react.js"></script>
+    <script src="../../packages/react-dom.js"></script>
+    <script src="../../packages/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="container"></div>
+
+    <script type="text/jsx">
+
+      class ToDoApp extends React.Component{
+        constructor(props){
+          super(props);
+          this.state={items: [], text: " ", id: 0};
+        }
+
+        handleChange(input){
+
+          this.setState({text: input.target.value});
+        }
+
+        handleSubmit(e){
+          e.preventDefault();
+          var newItem={
+            text: this.state.text,
+            id: this.state.id
+          };
+
+          this.setState({
+            items: this.state.items.concat(newItem),
+            text: " ",
+            id: this.state.id + 1
+          });
+        }
+        render(){
+          return (
+            <div>
+              <TodoList items={this.state.items} />
+              <form onSubmit={this.handleSubmit.bind(this)}>
+                <input onChange={this.handleChange.bind(this)} value={this.state.text}/>
+
+                <button> Add</button>
+              </form>
+            </div>
+            // value = {this.state.text}/>
+          );
+        }
+}
+        class TodoList extends React.Component{
+
+          render(){
+            return (
+              <ul> {this.props.items.map(function(item){
+                return <Item id={item.id} text={item.text}/>
+              })}
+              </ul>
+            );
+          }
+        }
+
+        class Item extends React.Component{
+          constructor(props){
+            super(props);
+            this.state=({finished: false});
+          }
+
+          handleCross(){
+            this.setState({finished: !this.state.finished});
+          }
+
+          render(){
+            var line=this.state.finished? 'line-through': 'none';
+            return (<li style={{textDecoration: line}} id={this.props.id}
+              onClick={this.handleCross.bind(this)}>
+            {this.props.text}
+            </li> );
+          }
+        }
+
+      ReactDOM.render(<ToDoApp />, document.getElementById('container'));
+    </script>
+
+
+  </body>
+</html>

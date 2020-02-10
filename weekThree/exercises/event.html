@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <p><div id = "mouseOverMe"> Put the mouse here!</div></p>
+  <p><div class="highlightText"> This is some text.</div></p>
+  <p><div> This is some other text.  </div></p>
+  <p><div class="highlightText">
+    This text is important, too
+  </div></p>
+  <script>
+    function makeBold(){
+      var divs = document.getElementsByClassName('highlightText');
+      for (var i = 0; i < divs.length; i++){
+        divs[i].style.color = 'red';
+        divs[i].style.fontWeight = "bold";
+      }
+    }
+
+    function restore(){
+      var divs = document.getElementsByClassName('highlightText');
+      for (var i = 0; i < divs.length; i++){
+        divs[i].style.color = 'black';
+        divs[i].style.fontWeight = 'normal';
+      }
+    }
+
+    var mouseOverMe = document.getElementById('mouseOverMe');
+    mouseOverMe.addEventListener('mouseover', makeBold);
+    mouseOverMe.addEventListener('mouseout', restore);
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery-3.4.1.js"></script>
+    <!-- <script src = " https://code.jquery.com/jquery-3.4.1.js"></script> -->
+  </head>
+  <body>
+    <button id="clickMe"> Click Me!</button>
+    <p>
+      You've clicked the button <span id="numClicks"> 0 times</span>.
+
+      <script>
+        var clicks = 0;
+
+        function clickHandler(){
+          clicks++;
+          var numClicksSpan = $('#numClicks');
+          // numClicksSpan = documen.getElementById("numClicks");
+          // if(clicks == 1)
+          //   numClicksSpan.innerHTML = "once";
+          // else
+          //   numClicksSpan.innerHTML = clicks + ' times';
+          if (clicks == 1)
+            numClicksSpan.html('once');
+          else
+            numClicksSpan.html(clicks + ' times');
+        }
+
+        $("#clickMe").click(clickHandler);
+        buttn.click(clickHandler);
+      </script>
+  </body>
+</html>

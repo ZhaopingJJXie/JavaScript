@@ -1,0 +1,71 @@
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>
+    <script>
+      var friend = 'turtle';
+      friend.toUpperCase();
+      console.log(friend);
+
+      var message = ' hello everyone ';
+      message = message.trim();
+
+      var myAnimal = 'cat'.concat('mouse');
+      console.log(myAnimal);
+
+      var msg = 'programming in JavaScript is fun';
+      msg.startWith('programming');
+      msg.startWith('PROGRAMMING');
+      msg.endWith('is fun');
+      msg.includes('JavaScript');
+
+      var title = 'the title of my book';
+      var start = title.search('title');//4
+      start = title.search('banana')//-1
+
+      //regular expression /.../
+      var status = 'I am working VERY hard';
+      status.search(/VERY/);//13
+      status.search (/very/); //-1
+      status.search(/very/i); //13 ignore case
+
+      var numbers = '5 8 2 5 7 6'
+      numbers.search(/[012]/);// 4 zero based index of 2 in the array
+      /[012]/.test.(numbers);//true
+
+      var password = 'passowrd4real';
+      password.search([a-z]);//0
+      password.search(/\d/);//search for digits, return 8
+
+      var code = 'abc123d4e5';
+      code.search(/[0-9][a-z][0-9]/);//5
+
+    //not in a particular range
+    var chars = 'abc123K456';
+    chars.search(/[^0-9a-z]/);// 6
+
+    /[a-z][0-9]?[a-z]/.test('a1b');//true
+    /[a-z][0-9]?[z-a]/.test('abc');//true
+    /[a-z][0-9]?[a-z]/.test('a123n');//false
+
+    /[a-z][0-9]*[a-z]/.test('a123b');//true
+
+    //^ means starts with, $ means ends within
+    /^[a-z][0-9]/.test('a1b');//true
+    /^[a-z][0-9]/.test('ab12');//false
+
+    /[a-z][a-z]$/.test('123abc');//true
+    /[a-z][a-z]$/.test('123abc456');//flase
+
+    //exact matches
+    /^[a-z][0-9][a-z]$/.test('a1b');//true
+    /^[a-z][0-9][a-z]$/.test('a1b2c');//false
+    /^[a-z][0-9a-z]*[a-z]$/.test('a1b2c');//true   
+    </script>
+  </p>
+  </body>
+</html>

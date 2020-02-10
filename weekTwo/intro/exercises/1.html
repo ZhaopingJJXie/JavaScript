@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    This is my first javascript web page.
+    <p>
+    <script>
+      document.write('The current date and time is ');
+      var time = new Date();
+      var age = 12;
+      document.write(time);
+      console.log(age);
+      alert(age);
+      var firstName='John';
+      var lastName='doe';
+
+      var fullName=firstName.concat(' ',lastName);
+      var greeting='Hello, ' + fullName;
+      console.log(greeting.toUpperCase());
+      console.log(greeting.toLowerCase());
+      console.log(greeting.length);
+
+      var myArray=['cars', 12, false];
+      var age = myArray[1];
+      console.log(myArray[2]);
+      console.log(myArray.length);
+
+      var a = ['cat', 'dog', 'banana'];
+      a[4] = 'panda';
+      console.log(a[4]);
+      console.log(a[3]);
+      a[-5]='elephant';
+      console.log(a[-5]);
+
+      console.log(a);
+      //object 
+      var person={
+        name: 'John Doe',
+        age: 25,
+        isMale: true,
+        personality: ['patient', 'loyal', 'happy'],
+        company: {name: 'edx', id:2984}
+      }
+      console.log(person.age);
+      console.log(person['company'].id);
+
+      var pet={
+        name: 'Cooper',
+        tyep: 'dog',
+      }
+
+      console.log(pet.age);//undefined
+      pet.age=11;
+      consloel.log(pet.age); //11
+
+      pet['status']='good boy';
+      console.log(pet.status);//"good boy"
+
+    </script></p>
+  </body>
+</html>
